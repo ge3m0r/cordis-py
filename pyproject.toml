@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling==1.30.1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cordis"
+version = "0.0.0.dev0"
+description = "Python port of Cordis — a meta-framework of spatiotemporal composability"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "DeepSeek" }]
+dependencies = ["pyyaml>=6.0,<7"]
+
+[project.urls]
+Homepage = "https://github.com/deepseek-ai/deepseek-harness"
+Source = "https://github.com/deepseek-ai/deepseek-harness"
+
+[dependency-groups]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cordis"]
